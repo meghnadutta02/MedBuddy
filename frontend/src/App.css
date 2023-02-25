@@ -1,0 +1,10 @@
+#foodCard {
+  border: 2px solid rgb(5, 199, 170);
+  box-shadow: 1px 1px 8px 0px rgb(5, 70, 199);
+  padding-bottom: 28px;
+  height: 320px;
+}
+
+#foodPic {
+  max-width: 120px;
+}
