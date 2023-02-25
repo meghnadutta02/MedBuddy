@@ -21,7 +21,7 @@ import UserProfilePage from "./pages/user/UserProfilePage";
 import UserOrdersPage from "./pages/user/UserOrdersPage";
 import UserCartDetailsPage from "./pages/user/UserCartDetailsPage";
 import UserOrderDetailsPage from "./pages/user/UserOrderDetailsPage";
-
+import Appointments from "./pages/Appointments";
 // protected admin pages:
 import AdminUsersPage from "./pages/admin/AdminUsersPage";
 import AdminEditUserPage from "./pages/admin/AdminEditUserPage";
@@ -92,7 +92,7 @@ function App() {
           <Route path="/admin/chats" element={<AdminChatsPage />} />
           <Route path="/admin/analytics" element={<AdminAnalyticsPage />} />
         </Route>
-        <Route path="/appointments" element={<Random/>}/>
+        <Route path="/appointments" element={<Appointments/>}/>
         <Route path="/emergency" element={<Random/>}/>
         <Route path="/nutrition" element={<Random/>}/>
         <Route path="/information" element={<Random/>}/>

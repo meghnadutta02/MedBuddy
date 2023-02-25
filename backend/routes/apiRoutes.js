@@ -23,7 +23,21 @@ app.get("/get-token", (req, res) => {
         return res.status(401).send("Unauthorized. Invalid Token");
     }
 })
-
+app.post('/book-appointment', (req, res) => {
+    const { id } = req.body;
+  
+    // Find the appointment by ID
+    const appointment = appointments.find(appointment => appointment.id === id);
+  
+    if (!appointment) {
+      return res.status(404).send({ message: 'Appointment not found.' });
+    }
+  
+    // Update the appointment to show that it has been booked
+    appointment.booked = true;
+  
+    return res.send({ message: 'Appointment booked successfully.' });
+  });
 app.use("/products", productRoutes)
 app.use("/categories", categoryRoutes)
 app.use("/users", userRoutes)

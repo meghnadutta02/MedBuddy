@@ -78,7 +78,7 @@ const HeaderComponent = () => {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <LinkContainer to="/">
-          <Navbar.Brand href="/">BEST ONLINE SHOP</Navbar.Brand>
+          <Navbar.Brand href="/">MedBuddy</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -142,6 +142,11 @@ const HeaderComponent = () => {
                 </Badge>
                 <i className="bi bi-cart-dash"></i>
                 <span className="ms-1">CART</span>
+              </Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/bookedappointments">
+              <Nav.Link>
+                <span className="ms-1">Appointments</span>
               </Nav.Link>
             </LinkContainer>
           </Nav>
