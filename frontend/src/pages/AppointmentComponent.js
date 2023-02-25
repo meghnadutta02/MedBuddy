@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Row,Col } from 'react-bootstrap';
-export default function AppointmentComponent({index, doctor, specialty, date, time, onClick }) {
+export default function AppointmentComponent({index, doctor, specialty, date, time,Click }) {
   return (
 
         <Card key={index} style={{ marginTop: "30px", marginBottom: "50px" }}>
@@ -22,7 +22,7 @@ export default function AppointmentComponent({index, doctor, specialty, date, ti
                 <Card.Text className="h4">
                   {date}, {time}
                 </Card.Text>
-                <Button variant="primary">Book Appointment</Button>
+                <Button onClick={()=>Click()} variant="primary">Book Appointment</Button>
               </Card.Body>
             </Col>
           </Row>
