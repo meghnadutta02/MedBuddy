@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // components:
 import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
-
+import Random from "./pages/Random"
 //user components:
 import RoutesWithUserChatComponent from "./components/user/RoutesWithUserChatComponent";
 
@@ -14,7 +14,6 @@ import ProductListPage from "./pages/ProductListPage";
 import CartPage from "./pages/CartPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-
 import ProtectedRoutesComponent from "./components/ProtectedRoutesComponent";
 
 // protected user pages:
@@ -56,7 +55,7 @@ function App() {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="*" element="Page not exists 404" />
+          <Route path="*" element="Page does not 404" />
         </Route>
         {/* <Route path="/" component={HomePage} />  in previous versions of react-router-dom */}
 
@@ -89,9 +88,15 @@ function App() {
             path="/admin/order-details/:id"
             element={<AdminOrderDetailsPage />}
           />
+        
           <Route path="/admin/chats" element={<AdminChatsPage />} />
           <Route path="/admin/analytics" element={<AdminAnalyticsPage />} />
         </Route>
+        <Route path="/appointments" element={<Random/>}/>
+        <Route path="/emergency" element={<Random/>}/>
+        <Route path="/nutrition" element={<Random/>}/>
+        <Route path="/information" element={<Random/>}/>
+        <Route path="/mental-health" element={<Random/>}/>
       </Routes>
       <FooterComponent />
     </BrowserRouter>

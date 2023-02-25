@@ -4,7 +4,10 @@ import { Row, Container } from "react-bootstrap";
 import ServicesComponent from "../../components/ServicesComponent";
 import { useEffect, useState } from "react";
 import MetaComponent from "../../components/MetaComponent";
-
+import InfoComponent from "../../components/InfoComponent";
+import NutritionComponent from "../../components/NutritionComponent";
+import EmergencyComponent from "../../components/EmergencyComponent";
+import MentalHealthComponent from "../../components/MentalHealthComponent";
 const HomePageComponent = ({ categories, getBestsellers }) => {
   
     const [mainCategories, setMainCategories] = useState([]);
@@ -29,8 +32,13 @@ const HomePageComponent = ({ categories, getBestsellers }) => {
       {/* <ProductCarouselComponent bestSellers={bestSellers} /> */}
       <Container>
         <Row xs={1} md={2} className="g-4 mt-5">
+        {/* //appointments */}
              <ServicesComponent/>
-            <CategoryCardComponent />
+            <CategoryCardComponent /> {/*medicines*/}
+            <EmergencyComponent/>
+            <MentalHealthComponent/>
+            <NutritionComponent/>
+            <InfoComponent/>
             
         </Row>
 

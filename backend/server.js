@@ -85,7 +85,10 @@ const connectDB = require("./config/db");
 connectDB();
 
 app.use("/api", apiRoutes);
-
+app.get("/appointments",(req,res)=>
+{
+  return res.send("hello world");
+})
 const path = require("path");
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../frontend/build")));
