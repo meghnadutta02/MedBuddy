@@ -27,7 +27,5 @@ export default function AppointmentComponent({index, doctor, specialty, date, ti
             </Col>
           </Row>
         </Card>
-     
-    
   );
 }
