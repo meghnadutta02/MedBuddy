@@ -24,7 +24,7 @@ export default function Appointments() {
           specialty={appointment.specialty}
           date={appointment.date}
           time={appointment.time}
-          onClick={() => handleBookAppointment(appointment)}
+          Click={handleBookAppointment(appointment)}
         />
       ))}
     </div>
