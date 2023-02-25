@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // components:
 import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
-import Random from "./pages/Random"
+import Random from "./pages/Random";
+import Nutrition from "./pages/Nutrition.js";
 //user components:
 import RoutesWithUserChatComponent from "./components/user/RoutesWithUserChatComponent";
 
@@ -37,20 +38,41 @@ import ScrollToTop from "./utils/ScrollToTop";
 function App() {
   return (
     <BrowserRouter>
-    <ScrollToTop />
+      <ScrollToTop />
       <HeaderComponent />
       <Routes>
         <Route element={<RoutesWithUserChatComponent />}>
           {/* publicly available routes: */}
           <Route path="/" element={<HomePage />} />
           <Route path="/product-list" element={<ProductListPage />} />
-          <Route path="/product-list/:pageNumParam" element={<ProductListPage />} />
-          <Route path="/product-list/category/:categoryName" element={<ProductListPage />} />
-          <Route path="/product-list/category/:categoryName/:pageNumParam" element={<ProductListPage />} />
-          <Route path="/product-list/search/:searchQuery" element={<ProductListPage />} />
-          <Route path="/product-list/search/:searchQuery/:pageNumParam" element={<ProductListPage />} />
-          <Route path="/product-list/category/:categoryName/search/:searchQuery" element={<ProductListPage />} />
-          <Route path="/product-list/category/:categoryName/search/:searchQuery/:pageNumParam" element={<ProductListPage />} />
+          <Route
+            path="/product-list/:pageNumParam"
+            element={<ProductListPage />}
+          />
+          <Route
+            path="/product-list/category/:categoryName"
+            element={<ProductListPage />}
+          />
+          <Route
+            path="/product-list/category/:categoryName/:pageNumParam"
+            element={<ProductListPage />}
+          />
+          <Route
+            path="/product-list/search/:searchQuery"
+            element={<ProductListPage />}
+          />
+          <Route
+            path="/product-list/search/:searchQuery/:pageNumParam"
+            element={<ProductListPage />}
+          />
+          <Route
+            path="/product-list/category/:categoryName/search/:searchQuery"
+            element={<ProductListPage />}
+          />
+          <Route
+            path="/product-list/category/:categoryName/search/:searchQuery/:pageNumParam"
+            element={<ProductListPage />}
+          />
           <Route path="/product-details/:id" element={<ProductDetailsPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -88,15 +110,15 @@ function App() {
             path="/admin/order-details/:id"
             element={<AdminOrderDetailsPage />}
           />
-        
+
           <Route path="/admin/chats" element={<AdminChatsPage />} />
           <Route path="/admin/analytics" element={<AdminAnalyticsPage />} />
         </Route>
-        <Route path="/appointments" element={<Appointments/>}/>
-        <Route path="/emergency" element={<Random/>}/>
-        <Route path="/nutrition" element={<Random/>}/>
-        <Route path="/information" element={<Random/>}/>
-        <Route path="/mental-health" element={<Random/>}/>
+        <Route path="/appointments" element={<Appointments />} />
+        <Route path="/emergency" element={<Random />} />
+        <Route path="/nutrition" element={<Nutrition />} />
+        <Route path="/information" element={<Random />} />
+        <Route path="/mental-health" element={<Random />} />
       </Routes>
       <FooterComponent />
     </BrowserRouter>
