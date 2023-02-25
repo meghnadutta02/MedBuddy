@@ -7,3 +7,14 @@
 #foodPic {
   max-width: 150px;
 }
+
+#hospitalDetails {
+  border: 2px solid white;
+  box-shadow: 0 0px 8px 2px rgb(43, 86, 185);
+  border-radius: 10px;
+  margin: 30px 10px;
+}
+
+h1 {
+  text-shadow: 2px 2px 5px #26b6b8;
+}

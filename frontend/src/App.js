@@ -5,6 +5,7 @@ import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
 import Random from "./pages/Random";
 import Nutrition from "./pages/Nutrition.js";
+import HospitalInfo from "./pages/HospitalInfo";
 //user components:
 import RoutesWithUserChatComponent from "./components/user/RoutesWithUserChatComponent";
 
@@ -117,7 +118,7 @@ function App() {
         <Route path="/appointments" element={<Appointments />} />
         <Route path="/emergency" element={<Random />} />
         <Route path="/nutrition" element={<Nutrition />} />
-        <Route path="/information" element={<Random />} />
+        <Route path="/information" element={<HospitalInfo />} />
         <Route path="/mental-health" element={<Random />} />
       </Routes>
       <FooterComponent />
