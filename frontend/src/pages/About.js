@@ -27,11 +27,6 @@ function About() {
           This can help you monitor your overall health, detect any potential health issues early, and make more informed decisions about your lifestyle.
           </p>
           <p className="lead">
-          At Med Buddy, we're committed to helping you take control of your health.
-           Our platform is designed to be user-friendly and accessible to everyone, regardless of age or technical ability.
-           With Med Buddy, you can rest assured that your medication management and health tracking are in good hands.
-          </p>
-          <p className="lead">
           Join Med Buddy today and take the first step towards a healthier, happier you!
           </p>
         </Col>

@@ -96,6 +96,7 @@ const HeaderComponent = () => {
     <Navbar
       collapseOnSelect
       expand="lg"
+      variant="light"
       style={{
         backgroundColor: "rgb(84,192,192,1)",
         marginBottom: "20px",
@@ -104,7 +105,7 @@ const HeaderComponent = () => {
     >
       <Container>
         <LinkContainer to="/">
-          <Navbar.Brand href="/"><i class="bi bi-heart-pulse"></i> MedBuddy</Navbar.Brand>
+          <Navbar.Brand href="/"><b><i class="bi bi-heart-pulse"></i></b> MedBuddy</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

@@ -10,7 +10,7 @@ const InfoComponent = () => {
         src="/images/landimages/hospital.jpg"
       />
       <Card.Body>
-        <Card.Title>Hospitals Information</Card.Title>
+        <Card.Title>Healthcare Facility Details</Card.Title>
         <LinkContainer to={`/information`}>
           <Button variant="primary">Show Info</Button>
         </LinkContainer>

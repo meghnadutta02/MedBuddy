@@ -11,7 +11,7 @@ const NutritionComponent = () => {
         src={"/images/landimages/nutrition.jpg"}
       />
       <Card.Body>
-        <Card.Title>Food Nutrition</Card.Title>
+        <Card.Title>Meal Analysis</Card.Title>
         <LinkContainer to={`/nutrition`}>
           <Button variant="primary">Check</Button>
         </LinkContainer>
