@@ -4,7 +4,11 @@ import { LinkContainer } from "react-router-bootstrap";
 const InfoComponent = () => {
   return (
     <Card>
-      {/* <Card.Img crossOrigin="anonymous" variant="top" src={category.image ?? null} /> */}
+      <Card.Img
+        crossOrigin="anonymous"
+        variant="top"
+        src="/images/landimages/hospital.jpg"
+      />
       <Card.Body>
         <Card.Title>Hospitals Information</Card.Title>
         <LinkContainer to={`/information`}>

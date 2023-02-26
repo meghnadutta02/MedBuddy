@@ -21,8 +21,9 @@
   margin: 30px 10px;
 }
 
-h1 {
-  text-shadow: 2px 2px 5px #26b6b8;
+#landing-logos {
+  max-height: 240px;
+  /* max-width: 300px; */
 }
 
 .score-section {
