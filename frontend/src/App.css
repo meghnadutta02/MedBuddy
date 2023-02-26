@@ -3,6 +3,9 @@
   box-shadow: 0 0px 8px 2px rgb(27, 13, 158);
   height: 350px;
 }
+.ifr{
+  object-fit: cover;
+}
 
 #foodPic {
   max-width: 150px;
@@ -18,8 +21,9 @@
   margin: 30px 10px;
 }
 
-h1 {
-  text-shadow: 2px 2px 5px #26b6b8;
+#landing-logos {
+  max-height: 240px;
+  /* max-width: 300px; */
 }
 
 .score-section {
@@ -66,10 +70,9 @@ h1 {
 
 /* ANSWERS/RIGHT SECTION */
 .answer-section {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
 }
 stackmar {
   margin-bottom: px;

@@ -4,7 +4,12 @@ import { LinkContainer } from "react-router-bootstrap";
 const EmergencyComponent = () => {
   return (
     <Card>
-      {/* <Card.Img crossOrigin="anonymous" variant="top" src={category.image ?? null} /> */}
+      <Card.Img
+        id="landing-logos"
+        crossOrigin="anonymous"
+        variant="top"
+        src={"/images/landimages/emergency.jpg"}
+      />
       <Card.Body>
         <Card.Title>Emergency Service</Card.Title>
         <LinkContainer to={`/emergency`}>

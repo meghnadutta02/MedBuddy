@@ -3,6 +3,7 @@ import { BiPhoneCall, BiLogInCircle } from "react-icons/bi";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 function Hero() {
+
   return (
     <Container fluid className="py-5 " id="home">
       <div className="align-items-center">
@@ -41,6 +42,7 @@ function Hero() {
     </Container>
   );
 };
+
 
 export default Hero;
 
