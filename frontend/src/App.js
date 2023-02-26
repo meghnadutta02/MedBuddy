@@ -35,6 +35,7 @@ import AdminOrderDetailsPage from "./pages/admin/AdminOrderDetailsPage";
 import AdminChatsPage from "./pages/admin/AdminChatsPage";
 import AdminAnalyticsPage from "./pages/admin/AdminAnalyticsPage";
 import ScrollToTop from "./utils/ScrollToTop";
+import MentalHelth from "./pages/MentalHelth";
 
 function App() {
   return (
@@ -119,7 +120,7 @@ function App() {
         <Route path="/emergency" element={<Random />} />
         <Route path="/nutrition" element={<Nutrition />} />
         <Route path="/information" element={<HospitalInfo />} />
-        <Route path="/mental-health" element={<Random />} />
+        <Route path="/mental-health" element={<MentalHelth />} />
       </Routes>
       <FooterComponent />
     </BrowserRouter>

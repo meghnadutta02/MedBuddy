@@ -7,7 +7,10 @@
 #foodPic {
   max-width: 150px;
 }
-
+#btn{
+  margin: 10px;
+  padding: auto;
+}
 #hospitalDetails {
   border: 2px solid white;
   box-shadow: 0 0px 8px 2px rgb(43, 86, 185);
@@ -17,4 +20,85 @@
 
 h1 {
   text-shadow: 2px 2px 5px #26b6b8;
+}
+
+.score-section {
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+}
+
+/* QUESTION/TIMER/LEFT SECTION */
+.question-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.question-count {
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.question-count span {
+  font-size: 28px;
+}
+
+.question-text {
+  margin-bottom: 12px;
+}
+
+.timer-text {
+  background: rgb(230, 153, 12);
+  padding: 15px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: 5px solid rgb(255, 189, 67);
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* ANSWERS/RIGHT SECTION */
+.answer-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+stackmar {
+  margin-bottom: px;
+  margin-top: 20px;
+
+
+}
+#mcq{
+  box-shadow: 1px 2px 3px 0 grey;
+  border: none;
+  border-radius: 4px;
+}
+
+.correct {
+  background-color: #2f922f;
+}
+
+.incorrect {
+  background-color: #ff3333;
+}
+
+button:hover {
+  background-color: #b3b8c9;
+}
+
+button:focus {
+  outline: none;
+}
+
+button svg {
+  margin-right: 5px;
 }
