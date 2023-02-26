@@ -10,10 +10,7 @@ export default function Appointments() {
         { doctor: 'Dr. Brown', specialty: 'Orthopedics', date: 'March 10th, 2023', time: '9:00 AM',image:"/images/doctor.jpg" },
         { doctor: 'Dr. Chen', specialty: 'Neurology', date: 'March 12th, 2023', time: '12:00 PM',image:"/images/doctor.jpg" },
       ];
-  const handleBookAppointment = (appointment) => {
-    console.log(`Booked appointment with ${appointment.doctor} on ${appointment.date} at ${appointment.time}`);
-    // Logic to book appointment goes here
-  };
+  
 
   return (
     <div>
@@ -25,7 +22,6 @@ export default function Appointments() {
           date={appointment.date}
           time={appointment.time}
           image={appointment.image}
-          Click={handleBookAppointment(appointment)}
         />
       ))}
     </div>

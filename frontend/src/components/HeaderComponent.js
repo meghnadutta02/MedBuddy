@@ -10,7 +10,7 @@ import {
   Button,
   InputGroup,
 } from "react-bootstrap";
-
+import { c } from "../pages/AppointmentComponent";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../redux/actions/userActions";
@@ -146,6 +146,9 @@ const HeaderComponent = () => {
             </LinkContainer>
             <LinkContainer to="/bookedappointments">
               <Nav.Link>
+              <Badge pill bg="danger">
+                  {c === 0 ? "" : c}
+                </Badge>
                 <span className="ms-1">Appointments</span>
               </Nav.Link>
             </LinkContainer>

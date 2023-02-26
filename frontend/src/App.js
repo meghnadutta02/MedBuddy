@@ -8,7 +8,7 @@ import Nutrition from "./pages/Nutrition.js";
 import HospitalInfo from "./pages/HospitalInfo";
 //user components:
 import RoutesWithUserChatComponent from "./components/user/RoutesWithUserChatComponent";
-
+import BookedAppointments from "./pages/components/BookedAppointments";
 // publicly available pages:
 import HomePage from "./pages/HomePage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
@@ -90,9 +90,13 @@ function App() {
           <Route
             path="/user/order-details/:id"
             element={<UserOrderDetailsPage />}
-          />
+          /> 
+         
         </Route>
-
+        <Route
+            path="/bookedappointments"
+            element={<BookedAppointments/>}
+          />
         {/* admin protected routes: */}
         <Route element={<ProtectedRoutesComponent admin={true} />}>
           <Route path="/admin/users" element={<AdminUsersPage />} />
