@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
-
+import {Row,Col} from "react-bootstrap"
 import Carousel from "react-bootstrap/Carousel";
 import "../App.css";
 
@@ -114,42 +114,73 @@ const MentalHelth = () => {
   };
 
   return (
-    <Container>
+    <Row className="justify-content-center">
+    <Col md={8} lg={7}>
       <div>
         <div className="border rounded m-4 p-4">
             <h2 className="text-center">Take a Survey</h2>
         {showScore ? (
           <div className="score-section">
+          <Container className="mt-2">
+          <Row>
             <div>You scored {score} points!</div>
+            </Row>
+            <Row>
             <div className="my-4">{suggestion}</div>
+            </Row>
+            </Container>
           </div>
         ) : (
           <>
+           
+            <Row className="justify-content-center" style={{textAlign:"center"}}>
+
+            <Col lg={8} className="answer-section my-2" style={{textAlign:"center"}}>
             <div className="question-section">
               <div className="question-count">
                 <h5>
                   Question {currentQuestion + 1} / {questions.length}
                 </h5>
               </div>
-              <div className="question-text">
+              <div className="question-text fw-bold">
                 {questions[currentQuestion].question}
               </div>
             </div>
-            <div className="answer-section my-2">
               {questions[currentQuestion].answerOptions.map((answerOption) => (
                 <button
                   id="mcq"
-                  className="my-2"
+                  className="my-2 justify-content-center"
+                  style={{ width: '150px', height: '30px'}}
                   onClick={() => handleAnswerButtonClick(answerOption.score)}
                 >
                   {answerOption.answerText}
                 </button>
               ))}
-            </div>
+            </Col>
+            </Row>
           </>
         )}</div>
         <Carousel variant="dark" className="justify-center ">
-          <h2 className="text-center my-4">Books for improvement</h2>
+          <h2 className="text-center my-4">Mental Wellness Reading List</h2>
+          <Carousel.Item>
+            <div className="bg-light border">
+              <Card>
+                <Card.Img
+                  variant="top"
+                  src="https://media.istockphoto.com/id/1347394607/photo/blue-hardcover-book-on-white-background-with-clipping-path.jpg?b=1&s=170667a&w=0&k=20&c=00UWvkAaHROqxH77WufL5z2PmeFo01CGUg684QM4XSE="
+                />
+                <Card.Body>
+                  <Card.Title>The Body Keeps The Source</Card.Title>
+                  <Card.Text>
+                    For many people, trauma is part of life, and understanding
+                    the science behind how it impacts the body can be a great
+                    tool in recovery.
+                  </Card.Text>
+                  <Button variant="primary">Shop now at Amazon</Button>
+                </Card.Body>
+              </Card>
+            </div>
+          </Carousel.Item>
           <Carousel.Item>
             <div className="bg-light border">
               <Card>
@@ -228,57 +259,10 @@ const MentalHelth = () => {
           </Carousel.Item>
         </Carousel>
 
-        {/* caroussel for vids */}
-        <Carousel variant="dark" className="justify-center ">
-          <h2 className="text-center my-4">Videos for a better mind</h2>
-          <Carousel.Item>
-            <div className="bg-light border">
-              <iframe
-                className="ifr"
-                width="750"
-                height="598"
-                src="https://www.youtube.com/embed/3QIfkeA6HBY"
-                title="8 Things You Can Do To Improve Your Mental Health"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className="bg-light border"></div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className="bg-light border">
-              <iframe
-                className="ifr"
-                width="750"
-                height="598"
-                src="https://www.youtube.com/embed/3QIfkeA6HBY"
-                title="8 Things You Can Do To Improve Your Mental Health"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className="bg-light border">
-              <iframe
-                className="ifr"
-                width="750"
-                height="598"
-                src="https://www.youtube.com/embed/3QIfkeA6HBY"
-                title="8 Things You Can Do To Improve Your Mental Health"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </Carousel.Item>
-        </Carousel>
+        
       </div>
-    </Container>
+      </Col> 
+    </Row>
   );
 };
 

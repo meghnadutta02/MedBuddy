@@ -10,7 +10,7 @@ import {
   Button,
   InputGroup,
 } from "react-bootstrap";
-import { c } from "../pages/AppointmentComponent";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../redux/actions/userActions";
@@ -78,7 +78,7 @@ const HeaderComponent = () => {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <LinkContainer to="/">
-          <Navbar.Brand href="/">MedBuddy</Navbar.Brand>
+          <Navbar.Brand href="/"><i class="bi bi-heart-pulse"></i> MedBuddy</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -146,9 +146,6 @@ const HeaderComponent = () => {
             </LinkContainer>
             <LinkContainer to="/bookedappointments">
               <Nav.Link>
-              <Badge pill bg="danger">
-                  {c === 0 ? "" : c}
-                </Badge>
                 <span className="ms-1">Appointments</span>
               </Nav.Link>
             </LinkContainer>
