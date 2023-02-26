@@ -4,7 +4,12 @@ import { LinkContainer } from "react-router-bootstrap";
 const NutritionComponent = () => {
   return (
     <Card>
-      {/* <Card.Img crossOrigin="anonymous" variant="top" src={category.image ?? null} /> */}
+      <Card.Img
+        id="landing-logos"
+        crossOrigin="anonymous"
+        variant="top"
+        src={"/images/landimages/nutrition.jpg"}
+      />
       <Card.Body>
         <Card.Title>Food Nutrition</Card.Title>
         <LinkContainer to={`/nutrition`}>
