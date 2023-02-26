@@ -9,6 +9,7 @@ import EmergencyComponent from "../../components/EmergencyComponent";
 import MentalHealthComponent from "../../components/MentalHealthComponent";
 import "../../App.css";
 import Hero from "../Hero";
+import { height } from "@mui/system";
 
 const HomePageComponent = ({ categories, getBestsellers }) => {
   const [mainCategories, setMainCategories] = useState([]);
@@ -41,11 +42,11 @@ const HomePageComponent = ({ categories, getBestsellers }) => {
       <MetaComponent />
       {/* <ProductCarouselComponent bestSellers={bestSellers} /> */}
       <Container>
+        <h1 className="text-center">Services</h1>
         <Row xs={1} md={2} lg={3} className="g-4 m-5">
           {/* //appointments */}
           <Col>
-            {" "}
-            <ServicesComponent />{" "}
+            <ServicesComponent />
           </Col>
           <Col>
             <CategoryCardComponent />{" "}
@@ -64,7 +65,6 @@ const HomePageComponent = ({ categories, getBestsellers }) => {
             <InfoComponent />
           </Col>
         </Row>
-
         {error}
       </Container>
     </>
