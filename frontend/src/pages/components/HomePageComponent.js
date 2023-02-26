@@ -9,6 +9,7 @@ import EmergencyComponent from "../../components/EmergencyComponent";
 import MentalHealthComponent from "../../components/MentalHealthComponent";
 import "../../App.css";
 import Hero from "../Hero";
+import About from "../About";
 
 const HomePageComponent = ({ categories, getBestsellers }) => {
   const [mainCategories, setMainCategories] = useState([]);
@@ -38,6 +39,10 @@ const HomePageComponent = ({ categories, getBestsellers }) => {
       <div>
         <Hero />
       </div>
+      <div>
+        <About />
+      </div>
+
       <MetaComponent />
       {/* <ProductCarouselComponent bestSellers={bestSellers} /> */}
       <Container>
