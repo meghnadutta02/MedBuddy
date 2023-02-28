@@ -39,7 +39,6 @@ _
 #### 1. Ankush Roy
 #### 2. Meghna Dutta
 #### 3. Nabin Ghosh
-#### 4. Arghya Guha
 _
 
 #### To Run the software, clone the project in your remote repository and then  open cli
@@ -49,8 +48,8 @@ _
 
 #### open the front end folder
     
-     cd front end
+     cd frontend
      npm start
 #### then open the backend folder
      cd backend
-     npm run dev
+     npm run dev to deploy front end with back end
