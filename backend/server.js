@@ -1,16 +1,25 @@
 require("dotenv").config();
-var helmet = require('helmet')
+var helmet = require("helmet");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
 const express = require("express");
 const fileUpload = require("express-fileupload");
 const cookieParser = require("cookie-parser");
 const app = express();
+const cors = require("cors");
 
-app.use(helmet({
-    contentSecurityPolicy: false, 
-    crossOriginEmbedderPolicy: false
-}))
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    crossOriginEmbedderPolicy: false,
+  })
+);
+
+app.use(
+  cors({
+    origin: ["https://medbuddy-sw1r.onrender.com", "http://localhost:3000"],
+  })
+);
 
 const httpServer = createServer(app);
 global.io = new Server(httpServer);
@@ -22,7 +31,7 @@ app.use(fileUpload());
 const admins = [];
 let activeChats = [];
 function get_random(array) {
-   return array[Math.floor(Math.random() * array.length)]; 
+  return array[Math.floor(Math.random() * array.length)];
 }
 
 io.on("connection", (socket) => {
@@ -33,31 +42,35 @@ io.on("connection", (socket) => {
     if (admins.length === 0) {
       socket.emit("no admin", "");
     } else {
-       let client = activeChats.find((client) => client.clientId === socket.id);
-        let targetAdminId;
-        if (client) {
-           targetAdminId = client.adminId; 
-        } else {
-           let admin = get_random(admins); 
-           activeChats.push({ clientId: socket.id, adminId: admin.id });
-           targetAdminId = admin.id;
-        }
-      socket.broadcast.to(targetAdminId).emit("server sends message from client to admin", {
+      let client = activeChats.find((client) => client.clientId === socket.id);
+      let targetAdminId;
+      if (client) {
+        targetAdminId = client.adminId;
+      } else {
+        let admin = get_random(admins);
+        activeChats.push({ clientId: socket.id, adminId: admin.id });
+        targetAdminId = admin.id;
+      }
+      socket.broadcast
+        .to(targetAdminId)
+        .emit("server sends message from client to admin", {
           user: socket.id,
-        message: msg,
-      });
+          message: msg,
+        });
     }
   });
 
-  socket.on("admin sends message", ({ user,message }) => {
-    socket.broadcast.to(user).emit("server sends message from admin to client", message);
+  socket.on("admin sends message", ({ user, message }) => {
+    socket.broadcast
+      .to(user)
+      .emit("server sends message from admin to client", message);
   });
 
   socket.on("admin closes chat", (socketId) => {
-      socket.broadcast.to(socketId).emit("admin closed chat", "");
-      let c = io.sockets.sockets.get(socketId);
-      c.disconnect(); // reason:  server namespace disconnect
-  })
+    socket.broadcast.to(socketId).emit("admin closed chat", "");
+    let c = io.sockets.sockets.get(socketId);
+    c.disconnect(); // reason:  server namespace disconnect
+  });
 
   socket.on("disconnect", (reason) => {
     // admin disconnected
@@ -68,35 +81,39 @@ io.on("connection", (socket) => {
     activeChats = activeChats.filter((item) => item.adminId !== socket.id);
 
     // client disconnected
-    const removeIndexClient = activeChats.findIndex((item) => item.clientId === socket.id);
+    const removeIndexClient = activeChats.findIndex(
+      (item) => item.clientId === socket.id
+    );
     if (removeIndexClient !== -1) {
-       activeChats.splice(removeIndexClient, 1); 
+      activeChats.splice(removeIndexClient, 1);
     }
-    socket.broadcast.emit("disconnected", { reason: reason, socketId: socket.id });
+    socket.broadcast.emit("disconnected", {
+      reason: reason,
+      socketId: socket.id,
+    });
   });
 });
 
 const apiRoutes = require("./routes/apiRoutes");
-
-
 
 // mongodb connection
 const connectDB = require("./config/db");
 connectDB();
 
 app.use("/api", apiRoutes);
-app.get("/appointments",(req,res)=>
-{
+app.get("/appointments", (req, res) => {
   return res.send("hello world");
-})
+});
 const path = require("path");
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "../frontend/build")));
-    app.get("*", (req, res) => res.sendFile(path.resolve(__dirname, "../frontend", "build", "index.html")));
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "../frontend", "build", "index.html"))
+  );
 } else {
-   app.get("/", (req,res) => {
-      res.json({ message: "API running..." }); 
-   }) 
+  app.get("/", (req, res) => {
+    res.json({ message: "API running..." });
+  });
 }
 
 app.use((error, req, res, next) => {
